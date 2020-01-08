@@ -1,5 +1,5 @@
 import java.util.*;
-class hello
+public class hello
 {
     	static int i,j;
 		static float k;
