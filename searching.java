@@ -1,5 +1,5 @@
 import java.util.*;
-class searching
+public class searching
 {
 	public static void main(String args[])
 	{
