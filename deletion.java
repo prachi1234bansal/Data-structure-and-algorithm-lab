@@ -1,5 +1,5 @@
 import java.util.*;
-class deletion
+public class deletion
 {
 	public static void main(String args[])
 	{
