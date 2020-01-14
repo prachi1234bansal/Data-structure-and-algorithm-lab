@@ -1,5 +1,5 @@
 import java.util.*;
-class array1
+public class array1
 {
 	int i,j,temp;
 	void method1(int arr[])
