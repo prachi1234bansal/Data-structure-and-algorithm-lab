@@ -1,0 +1,86 @@
+package marvel;
+
+public class queueimplementationwitharray {
+	int size=5;
+	int f;
+	int ele;
+	int array[]=new int[size];
+	int front;
+	int rear;
+	queueimplementationwitharray()
+	{
+		rear=-1;
+		front=-1;
+		
+	}
+	void enqueue(int data)
+	{
+		if(rear==size-1)
+		{
+			System.out.println("Overflow");
+		}
+		else
+		{
+			if(front==-1)
+				front=0;
+			f=f+1;
+			rear++;
+			array[rear]=data;
+			
+		}
+	}
+	
+	void dequeue()
+	{
+		front=0;
+		if(rear==-1||front>rear)
+		{
+			System.out.println("Ünderflow");
+		}
+		else
+		{
+			ele=array[front];
+			//System.out.print(ele +"deleted");
+			front++;
+		
+			
+		}
+	}
+	void display()
+	{
+		System.out.println("Elements are inserted and enqueued at the queue are: ");
+		for(int i=0;i<f;i++)
+		{
+			System.out.print(array[i]+" ");
+		}
+	}
+	
+	void display1()
+	{
+		System.out.println("");
+		System.out.println("Elements are deleted or dequeued are");
+		front=0;
+		if(rear==-1&&front>rear)
+		{
+			System.out.println("underflow");
+		}
+		else
+		{
+			for(int i=front;i<=rear;i++)
+			{
+				System.out.print(array[i]+" ");
+			}
+		}
+	}
+	public static void main(String args[])
+	{
+		queueimplementationwitharray o=new queueimplementationwitharray();
+		o.enqueue(10);
+		o.enqueue(20);
+		o.enqueue(90);
+		o.enqueue(40);
+		o.display();
+		o.dequeue();
+		o.display1();
+	}
+}
