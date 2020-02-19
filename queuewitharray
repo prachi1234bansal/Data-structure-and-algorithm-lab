@@ -1,0 +1,115 @@
+package data1;
+
+public class array11 {
+
+	private static int front,rear,capacity;
+	private static int array1[];
+	array11(int c)
+	{
+		front=rear=0;
+		capacity=c;
+		array1=new int[capacity];
+		}
+	static void queueEnqueue(int data)
+	{
+		//check queue is full or not
+		if(capacity==rear)
+		{
+			System.out.println("Queue is full\n");
+			return;
+			}
+		//insert element at the rear
+		else
+		{
+			array1[rear]=data;
+			rear++;
+		}
+		
+	}
+	//function to delete an element
+	// from the front of the queue
+	static void queueDequeue()
+	{
+		// if queue is empty
+		if(front==rear)
+		{
+			System.out.println("Queue is empty");
+		
+		}
+		//shift all the elements from index 2 till rear
+		// to the right by one
+		else
+		{
+		
+			for(int i=0;i<rear-1;i++)
+			{
+				array1[i]=array1[i+1];
+			}
+			//store 0 at rear indicating there is no element
+			if(rear<capacity)
+			{
+				array1[rear]=0;
+			}
+			//decrement of rear
+			rear--;
+		}
+			/*for(i=front;i<rear;i++)
+			{
+				System.out.print(array1[i]+" ");
+			}
+			return;*/
+			
+		
+	}
+		//print queue elements
+		static void queueDisplay()
+		{
+			int i;
+			if(front==rear)
+			{
+				System.out.println("Empty");
+		}
+			//traverse front to rear and print the elements
+		for(i=front;i<rear;i++)
+		{
+			System.out.print(array1[i]+" ");
+		}
+		
+		}
+		//print front of queue
+		static void queueFront()
+		{
+			if(front==rear)
+			{
+				System.out.println("Empty");
+			return;
+			}
+			System.out.println();
+			System.out.println("Front element is:"+array1[front]);
+			
+		}
+
+
+public static void main(String args[])
+{
+	array11 a1=new array11(10);
+	a1.queueEnqueue(10);
+	a1.queueEnqueue(20);
+	a1.queueEnqueue(30);
+	a1.queueEnqueue(40);
+	a1.queueEnqueue(50);
+	a1.queueEnqueue(60);
+	a1.queueEnqueue(70);
+	a1.queueEnqueue(80);
+	a1.queueDequeue();
+	a1.queueDisplay();
+	a1.queueFront();
+
+	
+	
+			
+			}
+	}
+	
+
+
